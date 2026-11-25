@@ -1,57 +1,35 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Casino-Calculadora</title>
-        <link rel="stylesheet" href="CSS/estilos.css">
-    </head>
-    <body>
-        <main class="calculadora">
-            <h1>♠ Calculadora de Casino ♥</h1>
-            <p class="subtitulo">Calcula cuánto ganas según el juego y tu apuesta</p>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ruleta europea</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@600;800&display=swap">
+  <link rel="stylesheet" href="./CSS/styles.css">
+</head>
+<body>
+  <main>
+    <h1>Ruleta europea</h1>
 
-            <div class="campo">
-                <label for="juego">Juego</label>
-                <select id="juego"></select>
-            </div>
+    <section class="top">
+      <canvas id="wheel" width="460" height="460"></canvas>
+      <div class="info">
+        <div class="card">Saldo: <span class="big" id="bal"></span><br>Apostado: <span id="tot"></span></div>
+        <div class="card" id="msg">Elige una ficha y toca el tapete.</div>
+        <div class="card">Últimos números<div class="hist" id="hist"></div></div>
+      </div>
+    </section>
 
-            <div class="campo">
-                <label for="tipoApuesta">Tipo de apuesta</label>
-                <select id="tipoApuesta"></select>
-                <small id="pagoInfo" class="pista"></small>
-            </div>
+    <section class="felt"><div class="board" id="board"></div></section>
 
-            <div class="campo">
-                <label for="importe">Tu apuesta</label>
-                <input id="importe" type="number" inputmode="decimal" min="0" step="any" placeholder="0.00">
-                <div class="fichas" aria-label="Apuestas rápidas">
-                    <button type="button" class="ficha" data-valor="5">5</button>
-                    <button type="button" class="ficha" data-valor="10">10</button>
-                    <button type="button" class="ficha" data-valor="25">25</button>
-                    <button type="button" class="ficha" data-valor="50">50</button>
-                    <button type="button" class="ficha" data-valor="100">100</button>
-                </div>
-            </div>
-
-            <section class="resultado" aria-live="polite">
-                <div class="fila">
-                    <span>Si ganas, ganancia</span>
-                    <strong id="ganancia">0.00</strong>
-                </div>
-                <div class="fila">
-                    <span>Total que recibes (apuesta + ganancia)</span>
-                    <strong id="total">0.00</strong>
-                </div>
-                <div class="fila perdida">
-                    <span>Si pierdes</span>
-                    <strong id="perdida">0.00</strong>
-                </div>
-            </section>
-
-            <button type="button" id="limpiar" class="limpiar">Limpiar</button>
-        </main>
-
-        <script src="JS/script.js"></script>
-    </body>
+    <div class="bar">
+      <button class="chip-btn on" data-value="5">5</button>
+      <button class="chip-btn" data-value="25">25</button>
+      <button class="chip-btn" data-value="100">100</button>
+      <button id="clear">Borrar apuestas</button>
+      <button id="spin">Girar</button>
+    </div>
+  </main>
+  <script src="./JS/script.js"></script>
+</body>
 </html>

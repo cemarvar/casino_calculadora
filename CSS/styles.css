@@ -1,0 +1,49 @@
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: #0b1612;
+  color: #eaf2ee;
+  font-family: system-ui, sans-serif;
+}
+
+main { max-width: 1000px; margin: 0 auto; padding: 20px 16px 40px; }
+h1, .big, .cell { font-family: "Bodoni Moda", Georgia, serif; }
+
+/* Rueda + panel de información */
+.top { display: grid; grid-template-columns: 460px 1fr; gap: 24px; align-items: center; }
+canvas { width: 100%; max-width: 460px; height: auto; }
+.info { display: grid; gap: 12px; }
+.card { background: #122a21; border: 1px solid #27463a; border-radius: 12px; padding: 14px; }
+.big { font-size: 32px; font-weight: 800; }
+.hist { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; min-height: 30px; }
+.dot { min-width: 30px; height: 30px; border-radius: 50%; display: grid; place-items: center; font-weight: 700; }
+
+/* Colores de números y casillas */
+.r { background: #b3202a; }
+.b { background: #15171a; }
+.g { background: #0b7a43; }
+
+/* Tapete */
+.felt { margin-top: 24px; background: #0d5a39; border: 3px solid #d9b25f; border-radius: 16px; padding: 14px; overflow-x: auto; }
+.board { display: grid; grid-template-columns: .9fr repeat(12, 1fr) 1fr; gap: 3px; min-width: 700px; }
+.cell { position: relative; min-height: 46px; color: #fff; font-size: 18px; background: none; border: 1px solid #d9b25f; border-radius: 4px; cursor: pointer; }
+.cell.out { font-family: system-ui, sans-serif; font-size: 15px; }
+.cell.win { outline: 3px solid #d9b25f; outline-offset: -3px; }
+.chip { position: absolute; right: 3px; bottom: 3px; min-width: 26px; height: 26px; padding: 0 5px; border-radius: 13px; background: #d9b25f; color: #2a1d05; font: 700 12px system-ui, sans-serif; display: grid; place-items: center; }
+.chip:empty { display: none; }
+
+/* Botones */
+.bar { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-top: 14px; }
+button { cursor: pointer; font: 600 15px system-ui, sans-serif; }
+.bar > button { padding: 11px 16px; border-radius: 10px; border: 1px solid #27463a; background: #122a21; color: #eaf2ee; }
+#spin { margin-left: auto; background: #d9b25f; color: #2a1d05; border-color: #d9b25f; font-weight: 800; }
+.bar > .chip-btn { width: 52px; height: 52px; padding: 0; border-radius: 50%; border: 4px dashed #fff; color: #fff; }
+.chip-btn[data-value="5"] { background: #b3202a; }
+.chip-btn[data-value="25"] { background: #2f7d4f; }
+.chip-btn[data-value="100"] { background: #222; }
+.chip-btn.on { box-shadow: 0 0 0 4px #d9b25f; }
+
+@media (max-width: 800px) {
+  .top { grid-template-columns: 1fr; }
+}
