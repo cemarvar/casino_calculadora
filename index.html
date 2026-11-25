@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Póquer de cinco cartas</title>
+</head>
+<body>
+  <main>
+    <h1>Póquer de cinco cartas</h1>
+    <p>Juega contra la banca. Cada mano cuesta 10 fichas ficticias. Elige hasta tres cartas para cambiar y gana con la mejor mano.</p>
+
+    <section aria-label="Marcador">
+      <p>Tus fichas: <output id="player-chips">100</output></p>
+      <p>Fichas de la banca: <output id="dealer-chips">100</output></p>
+    </section>
+
+    <section aria-labelledby="dealer-title">
+      <h2 id="dealer-title">Banca</h2>
+      <div id="dealer-hand" aria-label="Mano de la banca"></div>
+      <p id="dealer-result"></p>
+    </section>
+
+    <section aria-labelledby="player-title">
+      <h2 id="player-title">Tus cartas</h2>
+      <p>Durante el cambio, pulsa las cartas que quieras descartar.</p>
+      <div id="player-hand" aria-label="Tu mano"></div>
+      <p id="player-result"></p>
+    </section>
+
+    <p id="game-message" role="status" aria-live="polite">Pulsa «Repartir» para empezar una mano.</p>
+    <button id="deal-button" type="button">Repartir</button>
+    <button id="draw-button" type="button" hidden>Cambiar cartas y mostrar resultado</button>
+    <button id="reset-button" type="button" hidden>Empezar de nuevo</button>
+
+    <details>
+      <summary>Orden de las manos</summary>
+      <p>Carta alta, pareja, doble pareja, trío, escalera, color, full, póquer y escalera de color.</p>
+    </details>
+  </main>
+  <script src="JS/script.js"></script>
+</body>
+</html>
