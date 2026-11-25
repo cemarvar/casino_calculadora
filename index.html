@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Casino-Calculadora</title>
+        <link rel="stylesheet" href="CSS/estilos.css">
+    </head>
+    <body>
+        <main class="calculadora">
+            <h1>♠ Calculadora de Casino ♥</h1>
+            <p class="subtitulo">Calcula cuánto ganas según el juego y tu apuesta</p>
+
+            <div class="campo">
+                <label for="juego">Juego</label>
+                <select id="juego"></select>
+            </div>
+
+            <div class="campo">
+                <label for="tipoApuesta">Tipo de apuesta</label>
+                <select id="tipoApuesta"></select>
+                <small id="pagoInfo" class="pista"></small>
+            </div>
+
+            <div class="campo">
+                <label for="importe">Tu apuesta</label>
+                <input id="importe" type="number" inputmode="decimal" min="0" step="any" placeholder="0.00">
+                <div class="fichas" aria-label="Apuestas rápidas">
+                    <button type="button" class="ficha" data-valor="5">5</button>
+                    <button type="button" class="ficha" data-valor="10">10</button>
+                    <button type="button" class="ficha" data-valor="25">25</button>
+                    <button type="button" class="ficha" data-valor="50">50</button>
+                    <button type="button" class="ficha" data-valor="100">100</button>
+                </div>
+            </div>
+
+            <section class="resultado" aria-live="polite">
+                <div class="fila">
+                    <span>Si ganas, ganancia</span>
+                    <strong id="ganancia">0.00</strong>
+                </div>
+                <div class="fila">
+                    <span>Total que recibes (apuesta + ganancia)</span>
+                    <strong id="total">0.00</strong>
+                </div>
+                <div class="fila perdida">
+                    <span>Si pierdes</span>
+                    <strong id="perdida">0.00</strong>
+                </div>
+            </section>
+
+            <button type="button" id="limpiar" class="limpiar">Limpiar</button>
+        </main>
+
+        <script src="JS/script.js"></script>
+    </body>
+</html>
